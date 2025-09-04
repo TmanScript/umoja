@@ -47,6 +47,39 @@
       footer { margin-top: 4rem; }
       .benefit-icon { font-size: 2.5rem; color: #EC008C; }
       .testimonial-card { border-left: 5px solid #EC008C; }
+
+      /* Custom styles for visible social icons */
+      .social-icons {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 15px; /* Space between icons */
+        align-items: center;
+      }
+      .social-icons li a {
+        color: #EC008C; /* Icon color */
+        font-size: 1.8rem; /* Icon size */
+        transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      }
+      .social-icons li a:hover {
+        color: #c40073; /* Hover color */
+        transform: scale(1.1);
+      }
+      .social-icons li a span {
+        font-size: 1rem;
+        margin-left: 8px;
+        color: #212529; /* Text color */
+      }
+      .social-section {
+        background-color: #f1f2f3;
+        padding: 2rem 0;
+        border-top: 1px solid #e9ecef;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -182,6 +215,40 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Socials Section -->
+    <section class="social-section">
+      <div class="container px-4 px-lg-5">
+        <h3 class="mb-4 fw-bold">Connect With Us!</h3>
+        <ul class="social-icons justify-content-center">
+          <li>
+            <a href="https://wa.me/27732125406?text=/project-700" target="_blank" aria-label="Chat with us on WhatsApp">
+              <i class="bi bi-whatsapp"></i>
+              <span>WhatsApp: 073 212 5406</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:masood@onetel.co.za" aria-label="Email us">
+              <i class="bi bi-envelope-fill"></i>
+              <span>Email: masood@onetel.co.za</span>
+            </a>
+          </li>
+          <!-- Add other social media icons if needed -->
+          <!-- <li>
+            <a href="#" target="_blank" aria-label="Follow us on Facebook">
+              <i class="bi bi-facebook"></i>
+              <span>Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" aria-label="Follow us on Instagram">
+              <i class="bi bi-instagram"></i>
+              <span>Instagram</span>
+            </a>
+          </li> -->
+        </ul>
+      </div>
     </section>
 
 
