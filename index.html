@@ -83,6 +83,30 @@
         border-top: 1px solid #e9ecef;
         text-align: center;
       }
+
+      /* Style for the "Launch Special" badge */
+      .product-image-container {
+        position: relative; /* Essential for positioning the badge */
+      }
+      .launch-special-badge {
+        position: absolute;
+        top: 15px; /* Adjust as needed for padding from the top */
+        left: 15px; /* Adjust as needed for padding from the left */
+        background-color: #EC008C; /* Umoja's primary color */
+        color: white;
+        border-radius: 50%; /* Makes it a circle */
+        width: 100px; /* Adjust size as needed */
+        height: 100px; /* Adjust size as needed */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 0.9rem; /* Adjust font size */
+        text-align: center;
+        line-height: 1.2; /* For multi-line text */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+        z-index: 10; /* Ensure it's above the image */
+      }
     </style>
   </head>
   <body>
@@ -152,11 +176,16 @@
         <div class="row gx-4 gx-lg-5 align-items-center">
           <!-- Product Image -->
           <div class="col-md-6">
-            <img
-              class="card-img-top mb-5 mb-md-0 rounded shadow-lg"
-              src="assets/product.avif"
-              alt="Umoja Homespot 5G Router in a modern living room"
-            />
+            <div class="product-image-container">
+              <img
+                class="card-img-top mb-5 mb-md-0 rounded shadow-lg"
+                src="assets/product.avif"
+                alt="Umoja Homespot 5G Router in a modern living room"
+              />
+              <div class="launch-special-badge">
+                Launch<br>Special
+              </div>
+            </div>
           </div>
 
           <!-- Product Details -->
@@ -187,7 +216,7 @@
             <div class="alert alert-warning d-flex align-items-center p-3 mb-4 rounded-3 shadow-sm animate__animated animate__pulse animate__infinite" role="alert" style="background-color: #ffe0eb; border-color: #EC008C; animation-duration: 2s;">
                 <i class="bi bi-fire me-3" style="color: #EC008C; font-size: 1.8rem;"></i>
                 <div style="color: #c40073; font-weight: 700; font-size: 1.15rem;">
-                    ⚡ Special introductory offer! Order yours while stock last!
+                    ⚡ Special introductory offer! Order yours while stocks last!
                 </div>
             </div>
             <!-- End Urgency Message -->
