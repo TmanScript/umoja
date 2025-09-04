@@ -113,7 +113,7 @@ async function loadApiKey() {
 // Call this at the start
 loadApiKey();
 
-    let addr = ''; // ✅ fixed (was const)
+    let addr = ''; 
     const lenasiaCoords = [-26.3167, 27.8333];
     const maxDistanceMeters = 30000;
     const map = L.map('map').setView(lenasiaCoords, 10);
@@ -155,11 +155,11 @@ loadApiKey();
             if (lenasiaLatLng.distanceTo(L.latLng(lat, lng)) <= maxDistanceMeters) {
               
               const excellentRadius = 2000;
-              const goodRadius = 5000;
+              const goodRadius = 5000; // This is the radius from the KMZ, but we'll use 3KM for the check
               coverageZones.push({
                   latlng: L.latLng(lat, lng),
                   excellentRadius: excellentRadius,
-                  goodRadius: goodRadius
+                  goodRadius: goodRadius // Keeping for other potential uses, but not directly used in checkCoverage for the distance itself
               });
 
               heatPoints.push([lat, lng, 1.0]); 
@@ -280,8 +280,9 @@ loadApiKey();
       const latLng = L.latLng(latLngArray);
       if (userMarker) map.removeLayer(userMarker);
 
+      // Check if the user's location is within 2000 meters (2KM) of any tower
       let isInCoverage = coverageZones.some(zone =>
-        map.distance(latLng, zone.latlng) < zone.goodRadius
+        map.distance(latLng, zone.latlng) <= 2000 // Fixed 3000 meters (3KM
       );
 
       map.flyTo(latLng, 14);
@@ -292,7 +293,7 @@ loadApiKey();
         showResult(true);
       } else {
         userMarker = L.marker(latLng)
-          .addTo(map).bindPopup("<b>Outside Coverage Area</b><br>We're not here yet, but we hope to be soon!").openPopup();
+          .addTo(map).bindPopup("<b>You're Not in the Coverage Zone</b><br>We're not here yet, but we hope to be soon!").openPopup(); // Updated message
         showResult(false);
       }
     }
